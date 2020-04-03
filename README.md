@@ -1,0 +1,2 @@
+# sift-mask
+The vast diversity of art in Indonesia generates many interest both domestically and internationally. One of the prominent culture is Cirebon Mask. There are five types of Cirebon masks: Panji, Samba, Rumyang, Tumenggung and Kelana. In this research, Cirebon masks is classified using digital images processing techniques using Scale-Invariant Feature Transform, while K-Nearest Neighbour, Support Vector Machines and Random Forest as the classifier. The best result is obtained by Support Vector Machine and Random Forest.
