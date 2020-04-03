@@ -1,4 +1,5 @@
 clear;clc;
+% Tempatkan model data anda pada file direktori yang diinginkan lalu ambil keseluruhan model data
 files_kelana=dir('C:\Users\User\Documents\MATLAB\SIFT\Data Image\Topeng Kelana\*.png');
 files_tumenggung=dir('C:\Users\User\Documents\MATLAB\SIFT\Data Image\Topeng Tumenggung\*.png');
 files_rumyang=dir('C:\Users\User\Documents\MATLAB\SIFT\Data Image\Topeng Rumyang\*.png');
