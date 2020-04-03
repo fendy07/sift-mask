@@ -1,8 +1,8 @@
 clear
 clc
 
-load('feature.mat'); %load feature
-[row, col] =size(feature_all); %mengetahui baris dan kolom
+load('feature.mat'); %load feature =
+[row, col] =size(feature_all); %mengetahui baris dan kolom dalam fitur 
 
 label = feature_all(:,col);
 feature = feature_all(:,1:col-1);
@@ -131,8 +131,8 @@ end
 accuracy_svm_onevsall_gaussian=(counter_svm_onevsall_gaussian/row_test)*100;
 conf_mat_svm_onevsall_gaussian=confusionmat(label_test,result_svm_onevsall_gaussian);
 
-%svm
-%Linear
+%SVM
+%One vs All Linear
 result_svm_onevsall_linear = predict(model_svm_onevsall_linear,feature_test);
 counter_svm_onevsall_linear = 0;
 for i=1:row_test
@@ -143,7 +143,7 @@ end
 accuracy_svm_onevsall_linear=(counter_svm_onevsall_linear/row_test)*100;
 conf_mat_svm_onevsall_linear=confusionmat(label_test,result_svm_onevsall_linear);
 
-%Linear
+%One vs One Linear
 result_svm_onevsone_linear = predict(model_svm_onevsone_linear,feature_test);
 counter_svm_onevsone_linear = 0;
 for i=1:row_test
