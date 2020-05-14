@@ -1,12 +1,16 @@
 clear
 clc
 
-load('feature.mat'); %load feature =
-[row, col] =size(feature_all); %mengetahui baris dan kolom dalam fitur 
+%load feature data after preprocessing with SIFT
+load('feature.mat'); 
+%mengetahui baris dan kolom dalam fitur
+%get row and columns in feature data
+[row, col] =size(feature_all); 
 
 label = feature_all(:,col);
 feature = feature_all(:,1:col-1);
 
+%Split the data with Cross Validation
 [test,train] = crossvalind('HoldOut',label,0.7); 
 
 
@@ -27,6 +31,7 @@ for i=1:row_train
 end
 
 %pembuatan model 
+%make model classification with K-NN
 %knn
 model_knn_chebychev = fitcknn(feature_train,label_train,'Distance','chebychev'); %pembuatan model kernel knn
 model_knn_minkowski = fitcknn(feature_train,label_train, 'Distance','minkowski');
@@ -53,9 +58,9 @@ model_svm_onevsall_linear=fitcecoc(feature_train, label_train,'Learners',t_linea
 %random forest
 model_randomforest = TreeBagger(100,feature_train, label_train);
 
-%proses testing
+%testing process model predict for the data
 %knn
-%distance metric chebyshev
+%distance metric chebychev
 result_knn_chebychev = predict(model_knn_chebychev,feature_test);
 counter_knn_chebyshev = 0;
 [row_test,col_test] = size(feature_test);
