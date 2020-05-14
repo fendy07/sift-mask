@@ -1,5 +1,6 @@
 clear;clc;
 % Tempatkan model data anda pada file direktori yang diinginkan lalu ambil keseluruhan model data
+% Place your data model to directory file you want and get all data model
 files_kelana=dir('C:\Users\User\Documents\MATLAB\SIFT\Data Image\Topeng Kelana\*.png');
 files_tumenggung=dir('C:\Users\User\Documents\MATLAB\SIFT\Data Image\Topeng Tumenggung\*.png');
 files_rumyang=dir('C:\Users\User\Documents\MATLAB\SIFT\Data Image\Topeng Rumyang\*.png');
@@ -18,6 +19,7 @@ class_panji=5;
 circle = [32 32 32];
 
 %fitur kelana
+%Klana feature with SIFT
 for i=1:n_kelana
       str = strcat('C:\Users\User\Documents\MATLAB\SIFT\Data Image\Topeng Kelana\', files_kelana(i).name);
       temp_image=imread(str);
@@ -27,6 +29,7 @@ for i=1:n_kelana
 end
 
 %fitur tumenggung
+%Tumenggung Feature
 for i=1:n_tumenggung
     str = strcat('C:\Users\User\Documents\MATLAB\SIFT\Data Image\Topeng Tumenggung\', files_tumenggung(i).name);
       temp_image=imread(str);
@@ -36,6 +39,7 @@ for i=1:n_tumenggung
 end
 
 %fitur rumyang
+%Rumyang Feature
 for i=1:n_rumyang
     str = strcat('C:\Users\User\Documents\MATLAB\SIFT\Data Image\Topeng Rumyang\', files_rumyang(i).name);
     temp_image=imread(str);
@@ -45,6 +49,7 @@ for i=1:n_rumyang
 end
 
 %fitur samba
+%Pamindo or Samba Feature
 for i=1:n_samba
     str = strcat('C:\Users\User\Documents\MATLAB\SIFT\Data Image\Topeng Samba\', files_samba(i).name);
     temp_image=imread(str);
@@ -54,6 +59,7 @@ for i=1:n_samba
 end
 
 %fitur panji
+%Panji Feature
 for i=1:n_panji
     str = strcat('C:\Users\User\Documents\MATLAB\SIFT\Data Image\Topeng Panji\', files_panji(i).name);
     temp_image=imread(str);
@@ -62,5 +68,6 @@ for i=1:n_panji
       
 end
 
+%Feature all data with SIFT and save result feature data 
 feature_all = [feature_class_kelana; feature_class_tumenggung; feature_class_rumyang; feature_class_samba; feature_class_panji];
 save('feature.mat', 'feature_all');
