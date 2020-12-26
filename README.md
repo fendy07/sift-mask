@@ -15,4 +15,4 @@
   * Support Vector Machine
   * Random Forest
 
-For details you can see my <a href="https://medium.com/swlh/scale-invariant-feature-transform-for-cirebon-mask-classification-using-matlab-6c2e18a94321" rel="no follow">Medium</a>.
+For details you can see my article on <a href="https://medium.com/swlh/scale-invariant-feature-transform-for-cirebon-mask-classification-using-matlab-6c2e18a94321" rel="no follow">Medium</a>.
